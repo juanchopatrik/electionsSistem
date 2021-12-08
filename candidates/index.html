@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,700;1,100;1,300;1,700&display=swap" rel="stylesheet">
+    <!-- <script type="module" >
+    import get_data from "./index.js"
+      
+    </script> -->
+  </head>
+  <body>
+  <div class="container">
+    <div class="navbar">
+      <div class="navbar-options">
+        <ul>
+          <a href="../menu/menu.html"><li>Home</li></a>
+          <a href="../candidates/index.html"><li>Candidates</li></a>
+          <a href="../profile/index.html"><li>Profile</li></a>
+          <a href="../map/index.html"><li>Map</li></a>
+          </ul>
+      </div>
+    </div>
+    <div class="body">
+      <div class="header">
+        <img src="../img/Logo.png" alt="logo" id="logo-img">
+      </div>
+      <div class="main-body">
+        <div class="search">
+    
+          <input class="input" type="text" placeholder="Find a candidate" name="candidate" list="candidates" id="candidatesinput" onChange="get_data()" >
+
+          <datalist id="candidates" > </datalist>
+      </div>
+      </div>
+      <div class="cards">
+        <div class="cards-img">
+          <div class="cars-img-img">
+            <img id="img-to-render" src="../img/vote_candidates.png" alt="">
+
+          </div>
+          <div class="card-img-name" id="output">
+            <p>  Info about candidates   </p>
+          </div>
+        </div>
+        <div class="cards-info"></div>
+        <div class="card-info-info">
+
+          <p>Egestas eu quam blandit potenti consectetur ut. Et dui mauris adipiscing <br>
+          ultrices porttitor suscipit egestas lobortis. Dapibus lectus arcu at sed sit 
+          cursus. Eros, aliquam convallis consequat etiam interdum purus pellentesque. 
+          Justo in sagittis in mattis arcu tincidunt vulputate tempor. Lectus habitant in 
+          lectus lacus, morbi amet orci accumsan, cursus. Ultricies integer sed quisque 
+           tortor. Id facilisis quam sed ullamcorper ut tortor, eget aenean. Nunc fames velit 
+            tellus ultrices massa. In adipiscing amet vitae bibendum porttitor.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+<script language="javascript" >
+
+  
+var candidates_name = ["Freiya Maximilian","Mario alonzo Puig", "Sandra Rojas"];
+var candidates_img = ["../img/1st_candidate.png","../img/2_candidate.png","../img/3_candidate.png"]
+var list = document.getElementById('candidates');
+
+candidates_name.forEach(function(item){
+   var option = document.createElement('option');
+   option.value = item;
+   list.appendChild(option);
+   
+  });
+  
+  
+  function get_data(){
+    var val = document.getElementById("candidatesinput").value;
+    document.getElementById("output").innerHTML = val;
+    var index = candidates_name.indexOf(val);
+    console.log(index)
+    if (index != -1){
+
+      document.getElementById("img-to-render").src = candidates_img[index];
+
+    }else{
+      document.getElementById("img-to-render").src = "../img/vote_candidates.png";
+      document.getElementById("output").innerHTML = "Info about candidates";
+    }
+    
+
+  }
+
+
+</script>
+
+
+
+
+
+

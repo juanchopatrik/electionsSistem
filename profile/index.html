@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,700;1,100;1,300;1,700&display=swap" rel="stylesheet">
+    <script >
+
+
+    function check_pass() {
+  const password = document.querySelector('input[name=password]');
+  const confirm = document.querySelector('input[name=confirm]');
+  if (confirm.value === password.value) {
+    confirm.setCustomValidity('');
+  } else {
+    confirm.setCustomValidity('Passwords do not match');
+    
+  }
+}
+
+function checkText(){
+  const user_name = document.getElementById('user_name').value;
+  const okButton = document.getElementById('submit');
+  console.log(user_name)
+    var patt = /^\S+@\S+\.\S+$/ ;
+    if(patt.test(user_name) != true)
+    {
+      
+      alert('Please enter a valid phone number');
+      kButton.disabled = true;
+    return false;
+  }
+}
+
+
+
+    </script>
+</head>
+<body>
+  <!-- Start Buttons -->
+  <div class="container">
+      
+          <a href="../index.html"><button class="notactive">Sign In</button></a>
+
+          <div class="clearfix"></div>
+            <!-- End Buttons -->
+
+              <p class="g"><span class="ac">Create your account</span></p>
+              
+            <!-- Start Inputs -->
+          <form   action="../index.html">
+
+            <label>EMAIL</label>
+                       <input id="user_name" name="user_name" type="text" maxlength="50"  onchange="return checkText();"required>
+  
+            <label>Password</label>
+                       <input name="password" id="password" type="password"  minlength="8" paceholder="*********" required   onchange="check_pass();">
+  
+            <label>Confirm Password</label>
+                       <input name="confirm"  id="confirm_password" type="password" placeholder="*********" required onchange="check_pass();">
+            
+            <label>Phone Number</label>
+                       <input type="tel" id="phone" name="phone" placeholder="format (123-245-3678)" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+           
+            <label>Address</label>
+                       <input type="text" id="Address" name="Address" minlength="8" maxlength="50" required>
+            <label>Postal Code</label>
+                      <input id="zip" name="zip" type="text" pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]" required>
+
+  
+           
+              <!-- End Inputs -->
+  
+              <!-- Start last button -->
+  
+            <a ><button id="submit" class="llb" onclick="window.location='../menu/menu.html';">Sing Up</button></a>
+
+            <p class="llp">I'm already member</p>
+
+          </form>
+  </div>
+  <!-- End last button -->
+</body>
+</html>

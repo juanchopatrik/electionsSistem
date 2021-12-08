@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,700;1,100;1,300;1,700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="navbar-menu">
+      <div class="navbar-menu-options">
+          <ul>
+            <a href="./menu.html"><li>Home</li></a>
+            <a href="../candidates/index.html"><li>Candidates</li></a>
+            <a href="../profile/index.html"><li>Profile</li></a>
+            <a href="../map/index.html"><li>Map</li></a>
+          </ul>
+      </div>
+    </div>
+    <div class="body-menu">
+      <div class="menu-body-header">
+        <img src="../img/Logo.png" alt="logo" id="logo-img">
+        <p>We guarantee and defend democracy</p>
+      </div>
+      <div class="menu-body-image">
+        <img src="../img/congres.png" alt="logo" id="congres-img">
+        <input type="submit" value="Click and discover our services" class="primary-button login-button" >
+      </div>
+      <div class="menu-body-cards">
+        <div class="menu-body-cards-card1">
+          <img src="../img/vote2.png" alt="">
+          <p>
+            Trust, Security and Efficiency in these elections are the <br>
+            &ensp;&ensp;&ensp;&ensp;values that we offer you </p>
+        </div>
+        <div class="menu-body-cards-card2">
+          <img src="../img/vote3.png" alt="">
+          <p>
+            We secure your data through our databases based on blockchain systems  </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+<script>
+  $( ".menu-body-cards" ).hide();
+  $( ".primary-button" ).click(function(  ) {
+  event.preventDefault();
+  $( ".menu-body-cards"  ).show();
+});
+</script>
+
+
